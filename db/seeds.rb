@@ -105,6 +105,12 @@ admin = User.find_or_create_by(email: "admin@kudos.local") do |user|
   user.organization = company1
   user.office = tokyo_office
   user.department = hr_dept
+  user.employee_id = "EMP001"
+  user.position = "人事部長"
+  user.role = :admin
+  user.status = :active
+  user.hire_date = 8.years.ago
+  user.bio = "人事部の責任者として組織運営を担当しています。"
 end
 
 # 営業部長（組織1）
@@ -116,6 +122,12 @@ sales_manager = User.find_or_create_by(email: "sales-manager@kudos.local") do |u
   user.organization = company1
   user.office = tokyo_office
   user.department = sales_dept
+  user.employee_id = "EMP002"
+  user.position = "営業部長"
+  user.role = :general
+  user.status = :active
+  user.hire_date = 10.years.ago
+  user.bio = "営業チームを率いて売上目標達成に向けて活動しています。"
 end
 
 # 営業課長（組織1）
@@ -128,6 +140,12 @@ sales_section_manager = User.find_or_create_by(email: "sales-section@kudos.local
   user.office = tokyo_office
   user.department = sales_dept
   user.section = first_sales_section
+  user.employee_id = "EMP003"
+  user.position = "営業課長"
+  user.role = :general
+  user.status = :active
+  user.hire_date = 6.years.ago
+  user.bio = "第一営業課のメンバーと共に顧客開拓に取り組んでいます。"
 end
 
 # 開発者（組織1）
@@ -140,6 +158,12 @@ developer = User.find_or_create_by(email: "dev@kudos.local") do |user|
   user.office = tokyo_office
   user.department = dev_dept
   user.section = frontend_section
+  user.employee_id = "EMP004"
+  user.position = "シニアエンジニア"
+  user.role = :general
+  user.status = :active
+  user.hire_date = 3.years.ago
+  user.bio = "フロントエンド開発を専門としています。"
 end
 
 # 一般ユーザー1（組織1）
@@ -152,6 +176,12 @@ user1 = User.find_or_create_by(email: "user1@kudos.local") do |user|
   user.office = tokyo_office
   user.department = sales_dept
   user.section = second_sales_section
+  user.employee_id = "EMP005"
+  user.position = "営業担当"
+  user.role = :general
+  user.status = :active
+  user.hire_date = 2.years.ago
+  user.bio = "新規顧客の開拓を担当しています。"
 end
 
 # 一般ユーザー2（組織2）
@@ -163,6 +193,12 @@ user2 = User.find_or_create_by(email: "user2@kudos.local") do |user|
   user.organization = company2
   user.office = main_office
   user.department = general_dept
+  user.employee_id = "EMP101"
+  user.position = "総務担当"
+  user.role = :admin
+  user.status = :active
+  user.hire_date = 4.years.ago
+  user.bio = "総務業務全般を担当しています。"
 end
 
 # === 管理職の設定 ===
