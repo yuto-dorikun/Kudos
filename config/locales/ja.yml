@@ -9,6 +9,16 @@ ja:
       section: "課"
       appreciation: "感謝メッセージ"
 
+      category:
+        teamwork: "チームワーク"
+        innovation: "イノベーション"
+        leadership: "リーダーシップ"
+        dedication: "献身"
+        quality: "品質"
+        customer_focus: "顧客志向"
+        growth: "成長"
+        positivity: "ポジティブ"
+
     attributes:
       user:
         email: "メールアドレス"

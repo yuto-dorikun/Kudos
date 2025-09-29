@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   has_many :managed_departments, class_name: "Department", foreign_key: "manager_id"
   has_many :managed_sections, class_name: "Section", foreign_key: "manager_id"
+  has_many :sent_appreciations, class_name: "Appreciation", foreign_key: "sender_id"
+  has_many :received_appreciations, class_name: "Appreciation", foreign_key: "receiver_id"
 
   validates :first_name, :last_name, presence: true, length: { maximum: 50 }
   validates :organization_id, presence: true
