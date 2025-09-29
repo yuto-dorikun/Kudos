@@ -1,0 +1,82 @@
+<aside class="w-52 bg-white border-r border-gray-200">
+  <div class="flex flex-col h-full">
+    <!-- ロゴ・ヘッダー -->
+    <div class="px-6 py-4 border-b border-gray-200">
+      <%= link_to root_path do %>
+        <h1 class="text-lg font-bold text-gray-900"><%= t('kudos.application_name') %></h1>
+      <% end %>
+    </div>
+
+    <!-- ナビゲーションメニュー -->
+    <nav class="flex-1 py-4">
+      <div class="px-4 mb-6">
+        <p class="text-xs font-medium text-gray-500 mb-2">個人</p>
+
+        <%= link_to root_path, class: "block px-3 py-2 text-sm #{current_page?(root_path) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'} rounded-md mb-1" do %>
+          ダッシュボード
+        <% end %>
+
+        <button class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md mb-1">
+          Kudosを送る
+        </button>
+
+        <div class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 mb-1">
+          <span>受信箱</span>
+        </div>
+
+        <button class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md mb-1">
+          送信済み
+        </button>
+
+        <button class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md mb-1">
+          個人アクティビティ
+        </button>
+
+        <div class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 mb-1">
+          <span>個人分析</span>
+          <span class="bg-blue-600 text-white text-xs rounded px-2 py-0.5">Pro</span>
+        </div>
+
+        <div class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 mb-1">
+          <span>つながりマップ</span>
+          <span class="bg-blue-600 text-white text-xs rounded px-2 py-0.5">Pro</span>
+        </div>
+
+        <button class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md mb-1">
+          設定
+        </button>
+      </div>
+
+      <div class="px-4">
+        <p class="text-xs font-medium text-gray-500 mb-2">管理者</p>
+
+        <button class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md mb-1">
+          統計
+        </button>
+
+        <div class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 mb-1">
+          <span>強み分析</span>
+          <span class="bg-blue-600 text-white text-xs rounded px-2 py-0.5">Pro</span>
+        </div>
+
+        <div class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 mb-1">
+          <span>チーム分析</span>
+          <span class="bg-blue-600 text-white text-xs rounded px-2 py-0.5">Pro</span>
+        </div>
+
+        <div class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 mb-1">
+          <span>つながりマップ</span>
+          <span class="bg-blue-600 text-white text-xs rounded px-2 py-0.5">Pro</span>
+        </div>
+
+        <%= link_to users_path, class: "block px-3 py-2 text-sm #{controller_name == 'users' ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'} rounded-md mb-1" do %>
+          ユーザー管理
+        <% end %>
+
+        <button class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md mb-1">
+          設定
+        </button>
+      </div>
+    </nav>
+  </div>
+</aside>

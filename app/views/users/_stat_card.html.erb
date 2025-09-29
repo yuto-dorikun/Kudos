@@ -1,0 +1,7 @@
+<div class="bg-white p-4 rounded-lg border border-gray-200">
+  <p class="text-sm text-gray-600"><%= label %></p>
+  <p class="text-2xl font-bold text-gray-900 mt-1"><%= value %></p>
+  <% if defined?(extra) && extra %>
+    <p class="text-xs <%= defined?(extra_class) ? extra_class : 'text-gray-500' %> mt-1"><%= extra %></p>
+  <% end %>
+</div>

@@ -60,3 +60,7 @@ tmp/postgres_backup/
 
 # 本番設定
 /config/settings.local.yml
+
+# デザインファイル
+/design/
+design/
