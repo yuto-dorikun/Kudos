@@ -6,14 +6,14 @@ class Appreciation < ApplicationRecord
   belongs_to :receiver, class_name: "User", foreign_key: "receiver_id"
 
   enum category: {
-    teamwork: 0,
-    innovation: 1,
-    leadership: 2,
-    dedication: 3,
-    quality: 4,
-    customer_focus: 5,
-    growth: 6,
-    positivity: 7
+    thanks: 0,
+    awesome: 1,
+    helpful: 2,
+    learning: 3,
+    teamwork: 4,
+    creative: 5,
+    leadership: 6,
+    problem_solving: 7
   }
 
   validates :sender_id, presence: true

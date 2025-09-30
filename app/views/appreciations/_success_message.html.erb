@@ -1,0 +1,15 @@
+<div class="bg-white border border-gray-200 shadow-sm rounded-lg p-6">
+  <div class="text-center py-8">
+    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5"/>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Kudosを送信しました！</h3>
+    <p class="text-sm text-gray-600 mb-6">感謝の気持ちが届きました</p>
+    <div class="flex justify-center gap-3">
+      <%= link_to "もう一度送る", new_appreciation_path, class: "inline-flex items-center justify-center h-9 px-4 py-2 rounded-md border-2 border-gray-200 bg-transparent shadow-xs hover:bg-gray-50 hover:text-gray-900 transition-all text-sm font-medium", data: { turbo_frame: "_top" } %>
+      <%= link_to "ダッシュボードへ", root_path, class: "inline-flex items-center justify-center h-9 px-4 py-2 rounded-md bg-blue-600 text-white shadow-xs hover:bg-blue-600/90 transition-all text-sm font-medium" %>
+    </div>
+  </div>
+</div>

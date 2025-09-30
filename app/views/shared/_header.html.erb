@@ -1,0 +1,28 @@
+<header class="bg-white border-b border-gray-200 px-4 md:px-8 py-4">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <button class="md:hidden" onclick="document.querySelector('aside').classList.toggle('hidden')">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="6" y2="6"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <% if user_signed_in? %>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-semibold text-sm">
+            <%= current_user.last_name[0] if current_user.last_name.present? %>
+          </div>
+          <div class="hidden md:block">
+            <div class="text-sm font-medium text-foreground"><%= current_user.full_name %></div>
+            <div class="text-xs text-muted-foreground"><%= current_user.email %></div>
+          </div>
+        </div>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-sm text-gray-700 hover:text-gray-900" %>
+      <% end %>
+    </div>
+  </div>
+</header>
