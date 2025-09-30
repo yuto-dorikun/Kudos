@@ -10,14 +10,14 @@ ja:
       appreciation: "感謝メッセージ"
 
       category:
+        thanks: "ありがとう"
+        awesome: "素晴らしい"
+        helpful: "助かった"
+        learning: "勉強になった"
         teamwork: "チームワーク"
-        innovation: "イノベーション"
+        creative: "クリエイティブ"
         leadership: "リーダーシップ"
-        dedication: "献身"
-        quality: "品質"
-        customer_focus: "顧客志向"
-        growth: "成長"
-        positivity: "ポジティブ"
+        problem_solving: "問題解決"
 
     attributes:
       user:
@@ -39,7 +39,18 @@ ja:
       appreciation:
         message: "メッセージ"
         category: "カテゴリ"
-        is_anonymous: "匿名"
+        is_public: "匿名で送信"
+        receiver: "受信者"
+        sender: "送信者"
+        categories:
+          thanks: "ありがとう"
+          awesome: "素晴らしい"
+          helpful: "助かった"
+          learning: "勉強になった"
+          teamwork: "チームワーク"
+          creative: "クリエイティブ"
+          leadership: "リーダーシップ"
+          problem_solving: "問題解決"
 
     errors:
       messages:

@@ -16,9 +16,9 @@
           ダッシュボード
         <% end %>
 
-        <button class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md mb-1">
+        <%= link_to new_appreciation_path, class: "block px-3 py-2 text-sm #{controller_name == 'appreciations' && action_name == 'new' ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'} rounded-md mb-1" do %>
           Kudosを送る
-        </button>
+        <% end %>
 
         <div class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 mb-1">
           <span>受信箱</span>
