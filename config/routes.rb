@@ -10,10 +10,13 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    member do
+      get :activity
+    end
   end
 
   # 感謝メッセージ関連のルート
-  resources :appreciations, only: [:new, :create, :index]
+  resources :appreciations, only: [:new, :create, :index, :show]
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
