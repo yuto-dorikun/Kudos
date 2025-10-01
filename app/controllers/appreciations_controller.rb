@@ -60,10 +60,31 @@ class AppreciationsController < ApplicationController
   end
 
   def index
-    @appreciations = Appreciation.where(organization_id: Current.organization.id)
-                                  .includes(:sender, :receiver)
-                                  .order(created_at: :desc)
-                                  .page(params[:page]).per(20)
+    @tab = params[:tab] || 'timeline'
+
+    @appreciations = case @tab
+                     when 'sent'
+                       Appreciation.where(sender_id: current_user.id, organization_id: Current.organization.id)
+                     when 'received'
+                       Appreciation.where(receiver_id: current_user.id, organization_id: Current.organization.id)
+                     when 'mine'
+                       Appreciation.where(organization_id: Current.organization.id)
+                                   .where('sender_id = ? OR receiver_id = ?', current_user.id, current_user.id)
+                     else # 'timeline'
+                       Appreciation.where(organization_id: Current.organization.id)
+                     end
+
+    @appreciations = @appreciations.includes(:sender, :receiver)
+
+    # カテゴリフィルター
+    @appreciations = @appreciations.where(category: params[:category]) if params[:category].present?
+
+    @appreciations = @appreciations.order(created_at: :desc)
+                                  .page(params[:page]).per(10)
+  end
+
+  def show
+    @appreciation = Appreciation.find(params[:id])
   end
 
   private

@@ -35,6 +35,22 @@ class UsersController < ApplicationController
     redirect_to users_path(q: params[:q])
   end
 
+  def activity
+    @user = User.find(params[:id])
+
+    # 送信したKudos
+    @sent_appreciations = Appreciation.where(sender_id: @user.id, organization_id: Current.organization.id)
+                                      .includes(:sender, :receiver)
+                                      .order(created_at: :desc)
+                                      .page(params[:sent_page]).per(10)
+
+    # 受信したKudos
+    @received_appreciations = Appreciation.where(receiver_id: @user.id, organization_id: Current.organization.id)
+                                          .includes(:sender, :receiver)
+                                          .order(created_at: :desc)
+                                          .page(params[:received_page]).per(10)
+  end
+
   private
 
   def set_user

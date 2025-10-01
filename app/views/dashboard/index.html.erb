@@ -34,11 +34,10 @@
 
   <!-- アクションボタン -->
   <div class="mt-8 text-center">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg mr-4">
-      感謝を送る
-    </button>
+    <%= link_to "感謝を送る", new_appreciation_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg mr-4" %>
     <%= link_to "ログアウト", destroy_user_session_path,
         data: { turbo_method: :delete },
         class: "bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg" %>
   </div>
+
 </div>
